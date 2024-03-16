@@ -1,14 +1,20 @@
 function calcAverageCalories(days) {
-  const caloriesArray = [];
-  for (let day of days) {
-    caloriesArray.push(day.calories);
-  }
   let totalCalories = 0;
-  for (const calory of caloriesArray) {
-    totalCalories += calory;
+  for (const day of days) {
+    totalCalories += day.calories;
   }
+  //   const caloriesArray = [];
+  //   for (let day of days) {
+  //     caloriesArray.push(day.calories);
+  //   }
+  //   let totalCalories = 0;
+  //   for (const calory of caloriesArray) {
+  //     totalCalories += calory;
+  //   }
+  const totalDays = days.length;
+  if (totalDays === 0) return 0; // так як від ділення на 0, функція повертає NaN
 
-  return totalCalories / 7;
+  return totalCalories / totalDays;
 }
 
 console.log(
